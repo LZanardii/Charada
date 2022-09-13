@@ -1,0 +1,87 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.board {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    margin: 2px
+}
+
+.notImputed {
+    background-color: rgb(255 255 255);
+    border: 1.5px solid rgb(226 232 240);
+}
+
+.imputed{
+    background-color: rgb(255 255 255);
+    border: 1.5px solid black; 
+    text-shadow: 1px 1px 1px #000;
+}
+
+.right{
+    background-color: #006400; 
+    border: 1.5px solid #006400;
+    color: ghostwhite;
+    text-shadow: 1px 2px 2px #000;
+}
+
+.warning{
+    background-color: #B8860B;
+    border: 1.5px solid #B8860B;
+    color: ghostwhite;
+    text-shadow: 1px 2px 2px #000;
+}
+
+.wrong{
+    background-color: grey;
+    border: 1.5px solid grey;
+    color: ghostwhite;
+    text-shadow: 1px 2px 2px #000;
+}
+
+.keyboard {
+    height: 60px;
+    cursor: pointer;
+}
+
+.keyboard tr td {
+    text-align: center;
+    background-color: rgb(226 232 240);
+    border: 1.5px solid rgb(226 232 240);
+    width: 40px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.keyboard tr td:hover{
+    text-align: center;
+    background-color: rgb(255 255 255);
+    border: 1.5px solid black; 
+    width: 40px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.space {
+    height: 50px;
+}

@@ -1,0 +1,54 @@
+<app-modal (showModalFeedback)="closeModal()" [showModal]="showModal" [modalTitle]="modalTitle" [modalContent]="modalContent"></app-modal>
+<section> 
+    <div class="board" *ngFor="let letters of matrixOfLetters; index as i">
+        <div class="board" *ngFor="let letter of letters; index as i">
+            <span class="card" class={{letter.class}}>{{letter.value}}</span>
+        </div>
+    </div>
+
+    <span class="space"></span>
+
+    <table class="keyboard">
+        <tr>
+            <td (click)="insertLetter('Q')">Q</td>
+            <td (click)="insertLetter('W')">W</td>
+            <td (click)="insertLetter('E')">E</td>
+            <td (click)="insertLetter('R')">R</td>
+            <td (click)="insertLetter('T')">T</td>
+            <td (click)="insertLetter('Y')">Y</td>
+            <td (click)="insertLetter('U')">U</td>
+            <td (click)="insertLetter('I')">I</td>
+            <td (click)="insertLetter('O')">O</td>
+            <td (click)="insertLetter('P')">P</td>
+        </tr>
+    </table>
+    <table class="keyboard">
+        <tr>
+            <td (click)="insertLetter('A')">A</td>
+            <td (click)="insertLetter('S')">S</td>
+            <td (click)="insertLetter('D')">D</td>
+            <td (click)="insertLetter('F')">F</td>
+            <td (click)="insertLetter('G')">G</td>
+            <td (click)="insertLetter('H')">H</td>
+            <td (click)="insertLetter('J')">J</td>
+            <td (click)="insertLetter('K')">K</td>
+            <td (click)="insertLetter('L')">L</td>
+            <td (click)="insertLetter('Ç')">Ç</td>
+            <td (click)="deleteLetter()"><img src="../../assets/backspace.svg" /></td>
+        </tr>
+    </table>
+    <table class="keyboard">
+        <tr>
+            <td (click)="insertLetter('Z')">Z</td>
+            <td (click)="insertLetter('X')">X</td>
+            <td (click)="insertLetter('C')">C</td>
+            <td (click)="insertLetter('V')">V</td>
+            <td (click)="insertLetter('B')">B</td>
+            <td (click)="insertLetter('N')">N</td>
+            <td (click)="insertLetter('M')">M</td>
+            <td (click)="validateWord()">Enter</td>
+        </tr>
+    </table>
+
+    <span class="space"></span>
+</section>
