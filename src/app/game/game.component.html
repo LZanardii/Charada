@@ -1,14 +1,16 @@
-<app-modal (showModalFeedback)="closeModal()" [showModal]="showModal" [modalTitle]="modalTitle" [modalContent]="modalContent"></app-modal>
+<app-modal (showModalFeedback)="closeModal()" [showModalInput]="showModal" [modalTitleInput]="modalTitle" [modalContentInput]="modalContent"></app-modal>
 <section> 
     <div class="board" *ngFor="let letters of matrixOfLetters; index as i">
         <div class="board" *ngFor="let letter of letters; index as i">
             <span class="card" class={{letter.class}}>{{letter.value}}</span>
         </div>
     </div>
-
     <span class="space"></span>
+    <app-keyboard (insertLetter)="insertLetter($event)" (deleteLetter)="deleteLetter()" (validateWord)="validateWord()"></app-keyboard>
+    <span class="space"></span>
+</section>
 
-    <table class="keyboard">
+    <!-- <table class="keyboard">
         <tr>
             <td (click)="insertLetter('Q')">Q</td>
             <td (click)="insertLetter('W')">W</td>
@@ -48,7 +50,4 @@
             <td (click)="insertLetter('M')">M</td>
             <td (click)="validateWord()">Enter</td>
         </tr>
-    </table>
-
-    <span class="space"></span>
-</section>
+    </table> -->

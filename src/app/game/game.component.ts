@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ILetter } from 'src/utils/ILetter';
 import { MODAL_CLASSES } from '../modal/modal.component';
-
-interface letter {
-  value: string
-  class: string
-}
 
 @Component({
   selector: 'app-game',
@@ -18,7 +14,7 @@ export class GameComponent implements OnInit {
   modalTitle = ""
   modalContent = ""
   gameEnded: boolean = false
-  matrixOfLetters: letter[][] = [];
+  matrixOfLetters: ILetter[][] = [];
   couterRows: number = 0;
   couterLetters: number = 0;
 
@@ -56,7 +52,6 @@ export class GameComponent implements OnInit {
     } else if (this.couterLetters === 5) {
       this.matrixOfLetters[this.couterRows].forEach((letter, index) => {
         this.matrixOfLetters[this.couterRows][index] = this.validateLetter(letter.value, index);
-        this.getBoardLetter(letter.value)
       })
       this.couterRows += 1;
       this.couterLetters = 0;
@@ -72,7 +67,7 @@ export class GameComponent implements OnInit {
     }
   }
 
-  validateLetter(letter: string, index: number): letter {
+  validateLetter(letter: string, index: number): ILetter {
     if (this.finalWorld[index].toUpperCase() === letter) {
       return { value: letter, class: "right" }
     } else if (this.finalWorld.toUpperCase().search(letter) !== -1) {
@@ -82,7 +77,7 @@ export class GameComponent implements OnInit {
     }
   }
 
-  validateWinner(array: letter[]): boolean {
+  validateWinner(array: ILetter[]): boolean {
     let counter = 0;
     array.forEach((letter) => {
       if (letter.class === "right") {
@@ -122,9 +117,5 @@ export class GameComponent implements OnInit {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; 
-  }
-
-  getBoardLetter(id: string){
-    console.log(document.getElementById(id))
   }
 }

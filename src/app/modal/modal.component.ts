@@ -14,18 +14,16 @@ export const MODAL_CLASSES = {
 export class ModalComponent implements OnInit {
 
   @Input()
-  showModal: string = MODAL_CLASSES.notShowModal
+  showModalInput: string = MODAL_CLASSES.notShowModal
 
   @Input()
-  modalTitle: string = ""
+  modalTitleInput: string = ""
   
   @Input()
-  modalContent: string = ""
+  modalContentInput: string = ""
 
   @Output()
   showModalFeedback = new EventEmitter<string>()
-
-  showImage: boolean = false
 
   constructor() { }
 

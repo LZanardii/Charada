@@ -1,0 +1,8 @@
+<div class="keyboard" *ngFor="let row of alphabet; index as i" >
+    <div *ngFor="let letter of row; index as i" >
+        <span class="letter" class={{letter.class}} (click)="manipulateLetterMethod(letter.value,letter.click)" *ngIf="showImage(letter.value); else elseBlock"><img src="../../assets/backspace.svg" /></span>
+        <ng-template #elseBlock>
+            <span class="letter" class={{letter.class}} (click)="manipulateLetterMethod(letter.value,letter.click)">{{letter.value}}</span>
+        </ng-template>
+    </div>
+</div>

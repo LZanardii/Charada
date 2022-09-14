@@ -1,3 +1,5 @@
+@import "../../styles.css";
+
 section {
     display: flex;
     flex-direction: column;
@@ -36,28 +38,11 @@ section {
     text-shadow: 1px 1px 1px #000;
 }
 
-.right{
-    background-color: #006400; 
-    border: 1.5px solid #006400;
-    color: ghostwhite;
-    text-shadow: 1px 2px 2px #000;
+.space {
+    height: 50px;
 }
 
-.warning{
-    background-color: #B8860B;
-    border: 1.5px solid #B8860B;
-    color: ghostwhite;
-    text-shadow: 1px 2px 2px #000;
-}
-
-.wrong{
-    background-color: grey;
-    border: 1.5px solid grey;
-    color: ghostwhite;
-    text-shadow: 1px 2px 2px #000;
-}
-
-.keyboard {
+/* .keyboard {
     height: 60px;
     cursor: pointer;
 }
@@ -80,8 +65,4 @@ section {
     padding: 5px;
     font-size: 20px;
     border-radius: 5px;
-}
-
-.space {
-    height: 50px;
-}
+} */
