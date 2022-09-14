@@ -7,7 +7,9 @@
             <span class="close" (click)="onClose()">X</span>
         </div>
         <div class="content">
-            {{modalContentInput}}
+            <div *ngFor="let sentence of formatedContent; index as i">
+                <span *ngIf="validSentence(sentence)"> {{sentence}} <br><br></span>
+            </div>
         </div>
     </div>
 </div>

@@ -35,7 +35,7 @@ section {
 .imputed{
     background-color: rgb(255 255 255);
     border: 1.5px solid black; 
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 1px 2px 2px black;
 }
 
 .space {

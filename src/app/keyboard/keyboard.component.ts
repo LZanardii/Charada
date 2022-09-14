@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
 import { IAlphabetLetter, ILetter } from 'src/utils/ILetter';
 
 @Component({
@@ -9,10 +9,7 @@ import { IAlphabetLetter, ILetter } from 'src/utils/ILetter';
 export class KeyboardComponent implements OnInit {
 
   @Input()
-  letterInput: string = ""
-
-  @Input()
-  classInput: string = ""
+  clickedLetters: ILetter[] = []
 
   @Output()
   insertLetter = new EventEmitter<string>()
@@ -22,6 +19,8 @@ export class KeyboardComponent implements OnInit {
 
   @Output()
   validateWord = new EventEmitter<string>()
+
+  usedLetters: ILetter[] = []
 
   alphabet: IAlphabetLetter[][] = [
     [
@@ -66,12 +65,18 @@ export class KeyboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateLetter(){
-    this.alphabet.forEach((row) => {
-      row.forEach((letter) => {
-        if (letter.value === this.letterInput){
-          letter.class = this.classInput
-        }
+  ngOnChanges(change: SimpleChange){
+    this.updateLetter(this.clickedLetters)
+  }
+
+  updateLetter(clickedLettersArray: ILetter[]){
+    clickedLettersArray.forEach((feedbackLetter) => {
+      this.alphabet.forEach((row) => {
+        row.forEach((letter) => {
+          if (letter.value === feedbackLetter.value){
+            letter.class = feedbackLetter.class
+          }
+        })
       })
     })
   }

@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   showModal:string = MODAL_CLASSES.notShowModal;
   modalTitle:string = "Como Jogar";
-  modalContent: string = "Você tem 6 tentativas para adivinhar a palavra. Após cada tentativa, os blocos irão indicar quão próximo seu palpite está da palavra correta. Atenção: acentos serão preenchidos automaticamente.";
+  modalContent: string = "Você tem 6 tentativas para adivinhar a palavra. Após cada tentativa, os blocos irão indicar quão próximo seu palpite está da palavra correta de acordo com a cor de feedback! \nVERDE - Acertou o carectere e sua posição. \nAMARELO - Acertou o caractere mas errou sua posição. \nCINZA - Errou o caractere. \nBom jogo!";
 
   constructor() { }
 

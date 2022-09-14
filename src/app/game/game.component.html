@@ -6,7 +6,7 @@
         </div>
     </div>
     <span class="space"></span>
-    <app-keyboard (insertLetter)="insertLetter($event)" (deleteLetter)="deleteLetter()" (validateWord)="validateWord()"></app-keyboard>
+    <app-keyboard (insertLetter)="insertLetter($event)" (deleteLetter)="deleteLetter()" (validateWord)="validateWord()" [clickedLetters]="keyboardFeedback"></app-keyboard>
     <span class="space"></span>
 </section>
 
